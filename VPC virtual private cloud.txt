@@ -1,0 +1,21 @@
+1. Public Subnet - все сервера имеют PublicIP и имеют пряиой доступ в интернет
+
+2. Private Subnet - все сервера не имеют PublicIP и имеют доступ в интернет через NAT
+
+3. Database Subnet - все сервера не имеют PublicIP и не имеют доступ в интернет 
+
+Subnet SIDR Block должжен быть в VPC CIDR Block
+
+VPC SIDR     :    10.0.0.0/16
+
+Subnet SIDR:
+
+            10.0.10.0/24 => Servers IP range (10.0.10.0-10.0.10.255)
+            10.0.11.0/24 => Servers IP range (10.0.11.0-10.0.11.255)
+            10.0.12.0/24 => Servers IP range (10.0.12.0-10.0.12.255)
+
+            10.0.20.0/24 => Servers IP range (10.0.20.0-10.0.20.255)
+            10.0.21.0/24 => Servers IP range (10.0.21.0-10.0.21.255)
+            10.0.22.0/24 => Servers IP range (10.0.22.0-10.0.22.255)
+
+            
