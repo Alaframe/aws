@@ -1,9 +1,36 @@
+23. IP адрес 169.254.169.254
+
 надо запомнить IP адрес 169.254.169.254
 прочитать инфу про сервер 
 Linux: curl http://169.254.169.254/latest/meta-data
 Записать данные: a=`curl http://169.254.169.254/latest/meta-data/placement/availability-zone`
 
-
-
-
 Windows: пройти по ссылке в браузере http://169.254.169.254/latest/meta-data 
+
+
+24. Elastic Load Balancer основы архитектуры
+
+Создаем сервера (например 3 шт)
+Classic LB (получает реквест и отсылает его всем серверам, которыее подключены к нему) 
+(в Application LB можно создавать target группы (http, https))
+(Network LB тоже самое что и APB, + можно отконфигур на разные порты, используя ДНС нейм (net) отослать запрос на определенный сервер, если 
+(com), то на другой )
+
+идем в Load Balancers > Create Load Balancers > Classic LB 
+
+Step.1 Define LB
+1. прописываем имя
+2. выбираем сеть 
+3. Create an internal LB (если выбрать не будет доступа в интернет)
+4. Enable advanced VPC Configuration: "v" уточнить на какие сервера будет отправлять (на зоны)
+5. Listener Configuration (на каком порте будет слушаться данный LB)
+
+Step.2 Assign Security Groups
+
+Step.3 пропускаем
+
+Step.4 Configure Health Check будет проверять сервера, живые они или нет
+
+Step.5 Add EC2 Instances добавляем наши инстансы в LB
+Enable Cross-Zone LB выбираем всегда, иначе будет отправлять только на один сервер
+Enable Connection Draining (поддерживать конект в течении какого то времени)
