@@ -1,0 +1,9 @@
+надо запомнить IP адрес 169.254.169.254
+прочитать инфу про сервер 
+Linux: curl http://169.254.169.254/latest/meta-data
+Записать данные: a=`curl http://169.254.169.254/latest/meta-data/placement/availability-zone`
+
+
+
+
+Windows: 
