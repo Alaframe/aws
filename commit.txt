@@ -34,3 +34,14 @@ Step.4 Configure Health Check будет проверять сервера, жи
 Step.5 Add EC2 Instances добавляем наши инстансы в LB
 Enable Cross-Zone LB выбираем всегда, иначе будет отправлять только на один сервер
 Enable Connection Draining (поддерживать конект в течении какого то времени)
+
+SQS - Simple Queue Service - Самый первый сервис AWS
+
+"Decouple" - разъединение компонентов системы
+Standart Queue - при операции Pull не гарантировано FIFO - First in First output
+
+{ Но чтобы FIFO было бесплатным в Standart Queue, добавьте в сообщение Index код.
+И при Pull, проверяйте что после сообщения с номеров 3 вы получили сообщение с номеров 4, если нет, то делать еще раз Puul. }
+
+FIFO Queue - при операции Pull, гарантирует FIFO, только это стоит дороже.
+Размер сообщений ограничен 256kB

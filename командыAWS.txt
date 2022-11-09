@@ -1,0 +1,7 @@
+все команды AWS начинаются с "aws"
+
+
+
+запуск AWS Lambda с CLI 
+aws lambda invoke --function-name=(название функции) --region=(регион в котором создана функция) output.txt (файл в котором 
+                                                                                                      будет сохранен output)
