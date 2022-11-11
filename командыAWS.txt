@@ -1,7 +1,32 @@
 все команды AWS начинаются с "aws"
 
+просмотр S3 Bucket
 
+aws s3 ls
 
 запуск AWS Lambda с CLI 
 aws lambda invoke --function-name=(название функции) --region=(регион в котором создана функция) output.txt (файл в котором 
                                                                                                       будет сохранен output)
+================================================================================================================================
+
+Работа с System Manager
+
+aws ssm get-parameters --name DBendpoint --region us-east-1 - просмотр параметра
+
+aws ssm get-parameters --name DBendpoint --region us-east-1 --output text - просмотр в текстовом формате
+
+aws ssm get-parameters --name DBendpoint --region us-east-1 --output text --query Parameters[].Value - просмотр только строчки Value
+
+export DBENDPOINT=`aws ssm get-parameters --name DBendpoint --region us-east-1 --output text --query Parameters[].Value` 
+
+export DBUSERNAME=`aws ssm get-parameters --name DBusername --region us-east-1 --output text --query Parameters[].Value`
+
+export DBPASSWORD=`aws ssm get-parameters --name DBpassword --region us-east-1 --with-decryption --output text --query Parameters[].Value`
+
+экспорт переменных в invaironment (DBENDPOINT, DBUSERNAME, DBPASS)
+
+просмотр invaironment - env | grep DB показать все, что начинается с DB
+
+
+
+
