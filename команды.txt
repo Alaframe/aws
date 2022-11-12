@@ -3,6 +3,12 @@
 ssh -i key.pem (исп ключ от сервера, созданный на бастионе) ec2-user@IP
 
 
-просмотр сайта
 
-curl www.google.com 
+
+curl www.google.com просмотр сайта
+
+
+echo "Privet World!!!" > /home/alaframe/privet.txt  добавить текст в файл и при этом создать сам файл если его нет
+
+
+
